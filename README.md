@@ -1,2 +1,2 @@
 # PublicCountryHolidays
-Recruitment task. Using https://kayaposoft.com/enrico/json/ API show public country holidays
+Recruitment task. Display public country holidays Using https://kayaposoft.com/enrico/json/ API. 
