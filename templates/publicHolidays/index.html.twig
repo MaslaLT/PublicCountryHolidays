@@ -3,6 +3,33 @@
 {% block title %}Public Country Holidays{% endblock %}
 
 {% block body %}
-    <h1>Hello from symfony!</h1>
-    <button type="button" class="btn btn-primary">Primary</button>
+    <form class="m-3" action="{{ path('search') }}" method="get">
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <label for="countrySelect">Country</label>
+                <select class="form-control" id="countrySelect" name="country">
+
+                    {% for country in countryList %}
+                    <option>{{ country.fullName }}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+            <div class="col-md-6 mb-2">
+                <label for="yearSelect">Year</label>
+                <input type="number" class="form-control" name="year" id="yearSelect" min="2011" value="{{ "now"|date('Y') }}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <button type="submit" class="btn btn-success" value="Search">Search for holidays</button>
+            </div>
+        </div>
+    </form>
+
+    <p>
+        Welcome to Public Holidays Search Page.
+        Please enter Country and Year to see holidays.
+    </p>
+
 {% endblock %}

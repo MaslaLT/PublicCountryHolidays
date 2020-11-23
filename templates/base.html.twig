@@ -2,12 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}My App{% endblock %}</title>
+        <title>{% block title %}Public Country Holidays{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% include('inc/navbar.html.twig') %}
+
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
 
         <script src="{{ asset('assets/jquery/jquery-3.5.1.slim.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
