@@ -1,0 +1,31 @@
+<form class="m-3" action="{{ path('search') }}" method="get">
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            <label for="countrySelect">Country</label>
+            <select class="form-control" id="countrySelect" name="country">
+
+                {% for country in countryList %}
+                    {% if searchCountry is defined %}
+                    <option value="{{ country.countryCode }}">{{ country.fullName }}</option>
+                    {% else %}
+                    <option value="{{ country.countryCode }}">{{ country.fullName }}</option>
+                    {% endif %}
+                {% endfor %}
+
+            </select>
+        </div>
+        <div class="col-md-6 mb-2">
+            <label for="yearSelect">Year</label>
+            {% if searchYear is defined %}
+            <input type="number" class="form-control" name="year" id="yearSelect" min="2014" value="{{ searchYear }}">
+            {% else %}
+            <input type="number" class="form-control" name="year" id="yearSelect" min="2014" value="{{ "now"|date('Y') }}">
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            <button type="submit" class="btn btn-success" value="Search">Search for holidays</button>
+        </div>
+    </div>
+</form>

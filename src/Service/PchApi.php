@@ -24,10 +24,9 @@ class PchApi
 
         $httpClient = HttpClient::create();
         $response = $httpClient->request('GET', $url);
-
         if(!200 == $response->getStatusCode()) {
             throw new \Exception(
-                $url . ' returned ' . 'status code: ' . $response->getStatusCode()
+                'Encountered error fetching ' . $url
             );
         }
 
@@ -35,7 +34,7 @@ class PchApi
         return $response->toArray();
     }
 
-    public function getHolidaysForYear(string $countryCode, int $year, string $type = 'all')
+    public function getHolidaysForYear(string $countryCode, string $year, string $type = 'all')
     {
         $url = self::API_BASE_URL .
             'getHolidaysForYear&year=' . $year .
