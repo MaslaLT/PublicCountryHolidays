@@ -1,0 +1,27 @@
+{% for key, months in groupedHolidays %}
+
+<div class="card mt-2 mb-3">
+    <div class="card-header">
+        Holidays in month {{ key }}
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <div class="container">
+            {% for holiday in months %}
+                <div class="row mb-2">
+                {% for name in holiday['name']|reverse %}
+                    <div class="col-sm">
+                        {{ name['text'] }}
+                    </div>
+                {% endfor %}
+                    <div class="col-sm text-center">
+                        {{ holiday['date']['day'] }}
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </blockquote>
+    </div>
+</div>
+
+{% endfor %}
