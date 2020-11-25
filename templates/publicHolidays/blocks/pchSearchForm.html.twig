@@ -3,15 +3,17 @@
         <div class="col-md-6 mb-2">
             <label for="countrySelect">Country</label>
             <select class="form-control" id="countrySelect" name="country">
-
                 {% for country in countryList %}
-                    {% if searchCountry is defined %}
+                    {% if searchCountry is defined%}
+                        {% if country.countryCode is same as searchCountry %}
+                    <option selected value="{{ country.countryCode }}">{{ country.fullName }}</option>
+                        {% else %}
                     <option value="{{ country.countryCode }}">{{ country.fullName }}</option>
+                        {% endif %}
                     {% else %}
                     <option value="{{ country.countryCode }}">{{ country.fullName }}</option>
                     {% endif %}
                 {% endfor %}
-
             </select>
         </div>
         <div class="col-md-6 mb-2">
