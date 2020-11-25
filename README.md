@@ -14,6 +14,8 @@ composer install
 ``
 mv .env.local.example .env.local with
 ``
+* Fill local settings in .env.local
+
 * Run docker command
 ``
 docker-compose --env-file ./.env.local up -d
