@@ -9,13 +9,13 @@
             <div class="container">
             {% for holiday in months %}
                 <div class="row mb-2">
-                {% for name in holiday['name']|reverse %}
+                {% for name in holiday.name|reverse %}
                     <div class="col-sm">
-                        {{ name['text'] }}
+                        {{ name.text }}
                     </div>
                 {% endfor %}
                     <div class="col-sm text-center">
-                        {{ holiday['date']['day'] }}
+                        {{ holiday.date.day }}
                     </div>
                 </div>
             {% endfor %}

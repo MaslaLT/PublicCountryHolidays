@@ -1,0 +1,13 @@
+<div class="jumbotron">
+    <h1>Public Holidays For
+        {% for country in countryList %}
+            {% if country.countryCode is same as searchCountry %}
+                {{ country.fullName }}
+            {% endif %}
+        {% endfor %}
+        In {{ searchYear }}
+    </h1>
+    <p class="text-capitalize">Today is: <strong>{{ todayIs }} </strong></p>
+    <p class="text-capitalize">Total amount of holidays for this year: <strong>{{ totalHolidaysAmount }} </strong></p>
+    <p class="text-capitalize">Total amount of holidays and free days in row: <strong>{{ maxHolidaysAndFreeDaysInRow }} </strong></p>
+</div>

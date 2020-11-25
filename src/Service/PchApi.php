@@ -49,4 +49,30 @@ class PchApi
         $url = self::API_BASE_URL . 'getSupportedCountries';
         return $this->fetchApi($url);
     }
+
+    public function isTodayWorkDay(string $countryCode): bool
+    {
+        $todayDate = new \DateTime();
+        $url = self::API_BASE_URL .
+            'isWorkDay&date=' .
+            $todayDate->format('d-m-Y') .
+            '&country=' . $countryCode;
+
+        $response = $this->fetchApi($url);
+
+        return array_pop($response);
+    }
+
+    public function isTodayHoliday(string $countryCode): bool
+    {
+        $todayDate = new \DateTime();
+        $url = self::API_BASE_URL .
+            'isPublicHoliday&date=' .
+            $todayDate->format('d-m-Y') .
+            '&country=' . $countryCode;
+
+        $response = $this->fetchApi($url);
+
+        return array_pop($response);
+    }
 }
