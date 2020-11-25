@@ -46,12 +46,11 @@ class HolidaysController extends AbstractController
 
         $parameters = [
             'countryList' => $pchApi->getSupportedCountries(),
-            'holidays' => $groupedHolidays,
+            'groupedHolidays' => $groupedHolidays,
             'searchCountry' => $searchCountry,
             'searchYear' => $searchYear,
             'errors' => $errors,
         ];
-
 
         return $this->render('publicHolidays/search.html.twig', $parameters);
     }
