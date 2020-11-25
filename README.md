@@ -6,11 +6,13 @@ Recruitment task. Display public country holidays Using https://kayaposoft.com/e
 ``
 git clone https://github.com/MaslaLT/PublicCountryHolidays.git
 ``
-* Fill missing data to .env.local.example
-
 * Install composer packages
 ``
 composer install
+``
+* Overwrite .env.local with .env.local.example
+``
+mv .env.local.example .env.local with
 ``
 * Run docker command
 ``
